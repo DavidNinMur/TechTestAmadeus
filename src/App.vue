@@ -5,9 +5,12 @@
       <AppTopBar></AppTopBar>
       <AppVisualLayout></AppVisualLayout>
       <AppSectionTittle></AppSectionTittle>
-      <div>
+      <div class="block lg:flex">
         <div class="w-full lg:w-1/2">
           <AppWidgetFormContact></AppWidgetFormContact>
+        </div>
+        <div class="w-full lg:w-1/2">
+          <AppWidgetMap></AppWidgetMap>
         </div>
       </div>
     </div>
@@ -23,6 +26,7 @@ import AppTopBar from "./components/top-bar/AppTopBar.vue"
 import AppVisualLayout from "./components/generics/visual-layout/AppVisualLayout.vue"
 import AppSectionTittle from "./components/generics/section-tittle/AppSectionTittle.vue"
 import AppWidgetFormContact from "./components/widgets/widget-form-contact/AppWidgetFormContact.vue"
+import AppWidgetMap from "./components/widgets/widget-map/AppWidgetMap.vue"
 
 export default {
   name: "App",
@@ -30,7 +34,8 @@ export default {
     AppTopBar,
     AppVisualLayout,
     AppSectionTittle,
-    AppWidgetFormContact
+    AppWidgetFormContact,
+    AppWidgetMap
   }, 
   setup(){
 
