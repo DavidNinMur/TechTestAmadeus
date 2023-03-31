@@ -1,0 +1,27 @@
+
+.container-card-info{
+    background-color: #414141;
+    width: 18rem;
+    height: 32rem;
+    img{
+        height: 70%;
+        object-fit: cover;
+    }
+    color: white;
+
+    .div-card-data{
+        height: 30%;
+        .div-description {
+            overflow: hidden;
+            font-size: 12px;
+          }
+          
+          p {
+            overflow: hidden;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -webkit-box;
+          }
+
+    }
+}
