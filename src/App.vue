@@ -1,13 +1,8 @@
 
 <template>
   <header>
-    <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-
     <div class="wrapper">
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+      <AppTopBar></AppTopBar>
     </div>
   </header>
 
@@ -17,9 +12,13 @@
 <script>
 import { RouterLink, RouterView } from 'vue-router'
 
+import AppTopBar from "./components/top-bar/AppTopBar.vue"
+
 export default {
   name: "App",
-  components:{}, 
+  components:{
+    AppTopBar
+  }, 
   setup(){
 
   
