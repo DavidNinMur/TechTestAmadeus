@@ -5,6 +5,11 @@
       <AppTopBar></AppTopBar>
       <AppVisualLayout></AppVisualLayout>
       <AppSectionTittle></AppSectionTittle>
+      <div>
+        <div class="w-full lg:w-1/2">
+          <AppWidgetFormContact></AppWidgetFormContact>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -17,13 +22,15 @@ import { RouterLink, RouterView } from 'vue-router'
 import AppTopBar from "./components/top-bar/AppTopBar.vue"
 import AppVisualLayout from "./components/generics/visual-layout/AppVisualLayout.vue"
 import AppSectionTittle from "./components/generics/section-tittle/AppSectionTittle.vue"
+import AppWidgetFormContact from "./components/widgets/widget-form-contact/AppWidgetFormContact.vue"
 
 export default {
   name: "App",
   components:{
     AppTopBar,
     AppVisualLayout,
-    AppSectionTittle
+    AppSectionTittle,
+    AppWidgetFormContact
   }, 
   setup(){
 
