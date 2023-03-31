@@ -13,6 +13,7 @@
           <AppWidgetMap></AppWidgetMap>
         </div>
       </div>
+      <AppFooter></AppFooter>
     </div>
   </header>
 
@@ -27,6 +28,7 @@ import AppVisualLayout from "./components/generics/visual-layout/AppVisualLayout
 import AppSectionTittle from "./components/generics/section-tittle/AppSectionTittle.vue"
 import AppWidgetFormContact from "./components/widgets/widget-form-contact/AppWidgetFormContact.vue"
 import AppWidgetMap from "./components/widgets/widget-map/AppWidgetMap.vue"
+import AppFooter from "./components/footer/AppFooter.vue"
 
 export default {
   name: "App",
@@ -35,7 +37,8 @@ export default {
     AppVisualLayout,
     AppSectionTittle,
     AppWidgetFormContact,
-    AppWidgetMap
+    AppWidgetMap,
+    AppFooter
   }, 
   setup(){
 
