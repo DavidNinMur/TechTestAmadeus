@@ -1,0 +1,39 @@
+@import "@/assets/scss/colors.scss";
+
+
+
+/*********************************************
+*                FONT WEIGHT
+**********************************************/
+
+$font-weight-bold: 700;
+$font-weight-regular: 400;
+$font-weight-light: 300;
+
+.font-weight-bold{
+    font-weight: $font-weight-bold;
+}
+
+.font-weight-regular{
+    font-weight: $font-weight-regular;
+}
+
+.font-weight-light{
+    font-weight: $font-weight-light;
+}
+
+
+/*********************************************
+*                COLOR
+**********************************************/
+
+$font-color-white: white;
+$font-color-grey: $text-grey-color;
+
+.font-color-white{
+    color: $font-color-white;
+}
+
+.font-color-grey{
+    color: $font-color-grey;
+}

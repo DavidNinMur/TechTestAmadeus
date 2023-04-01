@@ -1,4 +1,4 @@
-  <div class="bg-black consearchtainer-top-bar">
+  <div class="container-top-bar">
     <nav class="padding-by-default-view mx-auto flex items-center justify-between py-6" aria-label="Global">
       <div class="flex md:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
@@ -7,19 +7,19 @@
         </a>
       </div>
       <div class="flex md:hidden">
-        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white" @click="onClickMobileMenuIcon()">
+        <button type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 font-color-white" @click="onClickMobileMenuIcon()">
           <span class="sr-only">Open main menu</span>
           <img src="../../assets/Icons/Menu White.svg" alt="">
         </button>
       </div>
       <div class="hidden md:flex md:gap-x-4" v-for="optionObj in topBarConfigProp.menuOptionsList">
         <router-link class="px-2 lg:px-4" :title="optionObj.title" :to="optionObj.linkTo" :class="{'router-link-active': $route.fullPath === optionObj.linkTo}">
-          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">{{optionObj.label}}</span>
+          <span class="text-xs lg:text-sm font-normal font-color-white hover:text-gray-300">{{optionObj.label}}</span>
         </router-link>
       </div>
     </nav>
     <div v-if="mobileMenuOpen" as="div" class="md:hidden">
-      <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm  sm:ring-gray-900/10">
+      <div class="container-top-bar-menu-small fixed inset-y-0 right-0 z-10 w-full overflow-y-aut px-6 py-6 sm:max-w-sm  sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
             <span class="sr-only">{{topBarConfigProp.companyDataObj.companyName}}</span>
@@ -33,7 +33,7 @@
         <div class="mt-6 flow-root">
           <div class="-my-6 divide-y divide-gray-500/10"  v-for="optionObj in topBarConfigProp.menuOptionsList">
               <router-link class="px-2" :title="optionObj.title" :to="optionObj.linkTo" :class="{'router-link-active': $route.fullPath === optionObj.linkTo}">
-                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">{{optionObj.label}}</span>
+                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal font-color-white hover:bg-gray-900">{{optionObj.label}}</span>
               </router-link>
           </div>
         </div>

@@ -1,11 +1,15 @@
+@import "../../assets/scss/colors.scss";
 
 .container-top-bar{
     border-bottom: 1px solid white;
-
+    background-color: $background-color-black;
     .router-link-active{
         span{
             text-decoration: underline;
             font-weight: 500;
         }
+    }
+    .container-top-bar-menu-small{
+        background-color: $background-color-black;
     }
 }

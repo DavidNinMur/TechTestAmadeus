@@ -1,8 +1,8 @@
+@import "../../assets/scss/colors.scss";
+
 .container-movie-library-view{
     .container-movies-section{
-        .movies-list{
-           
-        }
+        background-color: $background-grey-strong;
     }
     .container-header-library-view,.container-contact-section{
         background-color: black;

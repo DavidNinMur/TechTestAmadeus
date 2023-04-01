@@ -1,20 +1,19 @@
+@import "../../../assets/scss/colors.scss";
+@import "../../../assets/scss/fonts.scss";
 
 .container-card-info{
-    background-color: #414141;
+    background-color: $background-grey-medium;
     width: 18rem;
     height: 34rem;
     img{
         height: 75%;
         object-fit: cover;
     }
-    color: white;
-
     .div-card-data{
         .div-description {
             overflow: hidden;
             font-size: 12px;
           }
-          
           p {
             overflow: hidden;
             -webkit-line-clamp: 4;
@@ -24,6 +23,7 @@
 
     }
     .action-div{
+      background-color: $background-grey-strong;
       img{
         height: 100%;
       }
