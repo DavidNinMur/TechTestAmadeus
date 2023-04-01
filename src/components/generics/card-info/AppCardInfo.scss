@@ -1,16 +1,15 @@
 
 .container-card-info{
     background-color: #414141;
-    width: 18rem;
-    height: 32rem;
+    width: 16rem;
+    height: 34rem;
     img{
-        height: 70%;
+        height: 75%;
         object-fit: cover;
     }
     color: white;
 
     .div-card-data{
-        height: 30%;
         .div-description {
             overflow: hidden;
             font-size: 12px;

@@ -1,0 +1,24 @@
+.search-box {
+  width: 300px;
+}
+
+.search-box__input {
+  width: 100%;
+  padding: 2%;
+  padding-left: 30px;
+  background: url("src/assets/Icons/Search White.svg") no-repeat scroll left center;
+  background-size: 16px;
+  border: 1px solid white;
+  background-color: transparent;
+  background-position: 6px 8px;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  height: 12px;
+  width: 12px;
+  background: url("src/assets/Icons/Close White.svg") no-repeat ;
+  background-size: contain;
+  opacity: 1;
+  cursor: pointer;
+}

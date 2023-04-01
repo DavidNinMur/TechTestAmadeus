@@ -1,6 +1,26 @@
 <div class="container-movie-library-view">
     <AppVisualLayout :videoToShowProp="videoToShowRefStr"></AppVisualLayout>
     <AppSectionTittle :sectionDataProp="sectionDataRefObj"></AppSectionTittle>
+
+    <div class="container-movies-section bg-gray-700 p-20">
+        <div class="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+            <div>
+                <h3 class="text-2xl font-medium tracking-tight text-white sm:text-3xl">
+                    Collect your favourites
+                </h3>
+            </div>
+            <div class="w-full">
+                <AppSearchBox @onQueryChange="onQueryChange" @onCleaningSearch="onCleaningSearch"></AppSearchBox>
+            </div>
+        </div>
+        <hr>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" v-if="dataToRendererRefList">
+            <div class="flex justify-center" v-for="dataObj in dataToRendererRefList" :key="dataObj.id">
+              <AppCardInfo :dataToCardInfoProp="dataObj"/>
+            </div>
+        </div>
+    </div>
+
     <div class="block lg:flex">
       <div class="w-full lg:w-1/2">
         <AppWidgetFormContact></AppWidgetFormContact>
