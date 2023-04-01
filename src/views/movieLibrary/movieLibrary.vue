@@ -31,36 +31,40 @@ export default {
         })
         const dataToRendererRefList = ref();
 
-        const dataToCardInfoObj= {
-            imgUrl: 'src/assets/Images/Batman.jpg',
-            title: 'Batman Returns',
-            description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.'
-        }
-
         onBeforeMount(() => {
-            getDataToRender()
+            if(store.state.queryOfUser !== ''){
+                getResultOfSearchedFilms()
+            } else {
+                getFavouriteFilms()
+            }
         })
 
 
-        const getDataToRender = () => {
+        const getResultOfSearchedFilms = () => {
             dataToRendererRefList.value = store.state.filmsToShow;
         };
 
+        const getFavouriteFilms = () => {
+            dataToRendererRefList.value = store.state.favouriteFilms;
+        };
 
         const onQueryChange = async (searchStr) => {
             await store.dispatch("search", searchStr);
             store.commit("setQueryOfUser", searchStr);
-            getDataToRender();
+            getResultOfSearchedFilms();
         };
 
         const onCleaningSearch = () => {
+            console.log('searchStr')
             store.commit("setQueryOfUser", "");
+            store.commit("setFilms", []);
+            getResultOfSearchedFilms();
+            getFavouriteFilms()
         };
 
         return {
             videoToShowRefStr,
             sectionDataRefObj,
-            dataToCardInfoObj,
             dataToRendererRefList,
 
             onQueryChange,

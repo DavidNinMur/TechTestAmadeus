@@ -7,8 +7,27 @@ export default createStore({
   state() {
     return {
       filmsToShow: [],
+      favouriteFilms: [
+        {
+          imgUrl: 'src/assets/Images/Batman.jpg',
+          title: 'Batman Returns',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.',
+          selected: true
+        },
+        {
+          imgUrl: 'src/assets/Images/Wild West.jpg',
+          title: 'Wild Wild West',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.',
+          selected: true
+        },
+        {
+          imgUrl: 'src/assets/Images/Spiderman.jpg',
+          title: 'The Amazing Spiderman',
+          description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.',
+          selected: true
+        }
+      ],
       queryOfUser: "",
-      filterByUser: "",
     };
   },
   getters: {},
@@ -16,11 +35,11 @@ export default createStore({
     setFilms(state, newFilms) {
       state.filmsToShow = newFilms;
     },
+    setNewFavouriteFilms(state, newFavouriteFilms) {
+      state.filmsToShow = newFavouriteFilms;
+    },
     setQueryOfUser(state, queryOfUser) {
       state.queryOfUser = queryOfUser;
-    },
-    setFilterByUser(state, filterByUser) {
-      state.filterByUser = filterByUser;
     },
   },
   actions: {
