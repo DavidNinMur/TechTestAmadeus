@@ -1,4 +1,11 @@
 
 .container-top-bar{
     border-bottom: 1px solid white;
+
+    .router-link-active{
+        span{
+            text-decoration: underline;
+            font-weight: 500;
+        }
+    }
 }

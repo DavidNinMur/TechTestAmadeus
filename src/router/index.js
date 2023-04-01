@@ -1,13 +1,19 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/home/Home.vue'
+import MovieLibrary from '../views/movieLibrary/movieLibrary.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
-      path: '/movie-library',
+      path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/movie-library',
+      name: 'movieLibrary',
+      component: MovieLibrary
     },
     {
       path: '/about',
