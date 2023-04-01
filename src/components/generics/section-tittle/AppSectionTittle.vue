@@ -2,7 +2,19 @@
 
 <script>
 export default {
-    name: 'AppSectionTittle'
+    name: 'AppSectionTittle',
+    props:{
+        sectionDataProp:{
+            type: Object,
+            required: true
+        }
+    },
+    emits:[],
+    setup(){ 
+
+        
+        return{}
+    }
 }
 </script>
 
