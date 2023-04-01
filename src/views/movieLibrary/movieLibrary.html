@@ -1,32 +1,45 @@
 <div class="container-movie-library-view">
+  <div class="container-header-library-view">
     <AppVisualLayout :videoToShowProp="videoToShowRefStr"></AppVisualLayout>
-    <AppSectionTittle :sectionDataProp="sectionDataRefObj"></AppSectionTittle>
+    <AppSectionTittle
+      class="py-4 padding-by-default-view"
+      :sectionDataProp="sectionDataRefObj"
+    ></AppSectionTittle>
+  </div>
 
-    <div class="container-movies-section bg-gray-700 p-20">
-        <div class="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
-            <div>
-                <h3 class="text-2xl font-medium tracking-tight text-white sm:text-3xl">
-                    Collect your favourites
-                </h3>
-            </div>
-            <div class="w-full">
-                <AppSearchBox @onQueryChange="onQueryChange" @onCleaningSearch="onCleaningSearch"></AppSearchBox>
-            </div>
+  <div class="container-movies-section bg-gray-700 py-20">
+    <div class="padding-by-default-view">
+      <div class="mb-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4">
+        <div>
+          <h3 class="text-2xl font-medium tracking-tight text-white sm:text-3xl">
+            Collect your favourites
+          </h3>
         </div>
-        <hr>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4" v-if="dataToRendererRefList">
-            <div class="flex justify-center" v-for="dataObj in dataToRendererRefList" :key="dataObj.id">
-              <AppCardInfo :dataToCardInfoProp="dataObj"/>
-            </div>
+        <div class="w-full">
+          <AppSearchBox
+            @onQueryChange="onQueryChange"
+            @onCleaningSearch="onCleaningSearch"
+          ></AppSearchBox>
         </div>
-    </div>
-
-    <div class="block lg:flex">
-      <div class="w-full lg:w-1/2">
-        <AppWidgetFormContact></AppWidgetFormContact>
       </div>
-      <div class="w-full lg:w-1/2">
-        <AppWidgetMap></AppWidgetMap>
+      <hr />
+      <div
+        class="gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5"
+        v-if="dataToRendererRefList"
+      >
+        <div class="flex justify-center" v-for="dataObj in dataToRendererRefList" :key="dataObj.id">
+          <AppCardInfo :dataToCardInfoProp="dataObj" />
+        </div>
       </div>
     </div>
   </div>
+
+  <div class="container-contact-section py-0 pt-20 lg:py-20 block lg:flex">
+    <div class="w-full padding-by-default-view lg:w-1/2">
+      <AppWidgetFormContact></AppWidgetFormContact>
+    </div>
+    <div class="w-full h-96 pt-10 lg:h-auto lg:pr-12 lg:pt-32 lg:w-1/2">
+      <AppWidgetMap></AppWidgetMap>
+    </div>
+  </div>
+</div>
