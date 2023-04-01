@@ -17,6 +17,7 @@ export default {
     emits:[],
     setup(){
 
+        const videoToShowStr = 'src/assets/Videos/Header Video.mp4'
 
         const dataToCardInfoObj= {
             imgUrl: 'src/assets/Images/Batman.jpg',
@@ -25,7 +26,8 @@ export default {
         }
 
 
-        return{
+        return {
+            videoToShowStr,
             dataToCardInfoObj
         }
     }

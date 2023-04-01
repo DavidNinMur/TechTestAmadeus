@@ -2,7 +2,19 @@
 
 <script>
 export default {
-    name: 'AppVisualLayout'
+    name: 'AppVisualLayout',
+    props:{
+        videoToShowProp:{
+            type: String,
+            required: true
+        }
+    },
+    emits:[],
+    setup(){ 
+
+        
+        return{}
+    }
 }
 </script>
 
