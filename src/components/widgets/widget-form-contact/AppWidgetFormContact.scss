@@ -2,4 +2,12 @@
     input, textarea{
         background-color: #333232;
     }
+    .is-invalid {
+        border: 1px solid red;
+      }
+      .invalid-feedback {
+        color: red;
+        font-size: 12px;
+        margin-left: 10px;
+      }
 }
