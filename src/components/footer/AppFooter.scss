@@ -3,4 +3,8 @@
 
 .container-footer{
     background-color: $background-grey-strong;
+
+    .container-copyright{
+        border-top: 1px solid $background-grey-medium;
+    }
 }
