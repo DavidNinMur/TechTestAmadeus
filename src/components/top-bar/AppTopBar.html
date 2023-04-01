@@ -2,8 +2,8 @@
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 md:px-8 lg:px-12" aria-label="Global">
       <div class="flex md:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
-          <span class="sr-only">Amadeus</span>
-          <img class="h-8 w-auto" src="../../assets/Logos/Logo White.svg" alt="" />
+          <span class="sr-only">{{topBarConfigProp.companyDataObj.companyName}}</span>
+          <img class="h-8 w-auto" :src="topBarConfigProp.companyDataObj.companyImg" :alt=topBarConfigProp.companyDataObj.companyName />
         </a>
       </div>
       <div class="flex md:hidden">
@@ -12,31 +12,18 @@
           <img src="../../assets/Icons/Menu White.svg" alt="">
         </button>
       </div>
-      <div class="hidden md:flex md:gap-x-4">
-        <router-link class="px-2" title="Home" to="/" :class="{'router-link-active': $route.fullPath ==='/'}">
-          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">HOME</span>
-        </router-link>
-        <router-link class="px-2" title="Our Screens" to="/our-screens" :class="{'router-link-active': $route.fullPath ==='/our-screens'}">
-          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">OUR SCREENS</span>
-        </router-link>
-        <router-link class="px-2" title="Schedule" to="/schedule" :class="{'router-link-active': $route.fullPath ==='/schedule'}">
-          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">SCHEDULE</span>
-        </router-link>
-        <router-link class="px-2" title="Movide Library" to="/movie-library" :class="{'router-link-active': $route.fullPath ==='/movie-library'}">
-          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">MOVIE LIBRARY</span>
-        </router-link>
-        <router-link class="px-2" title="Location & contact" to="/contact" :class="{'router-link-active': $route.fullPath ==='/contact'}">
-          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">LOCATION & CONTACT</span>
+      <div class="hidden md:flex md:gap-x-4" v-for="optionObj in topBarConfigProp.menuOptionsList">
+        <router-link class="px-2 lg:px-4" :title="optionObj.title" :to="optionObj.linkTo" :class="{'router-link-active': $route.fullPath === optionObj.linkTo}">
+          <span class="text-xs lg:text-sm font-normal text-white hover:text-gray-300">{{optionObj.label}}</span>
         </router-link>
       </div>
     </nav>
     <div v-if="mobileMenuOpen" as="div" class="md:hidden">
-      <div class="fixed inset-0 z-10" />
-      <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+      <div class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-black px-6 py-6 sm:max-w-sm  sm:ring-gray-900/10">
         <div class="flex items-center justify-between">
           <a href="#" class="-m-1.5 p-1.5">
-            <span class="sr-only">Your Company</span>
-            <img class="h-8 w-auto" src="../../assets/Logos/Logo White.svg" alt="" />
+            <span class="sr-only">{{topBarConfigProp.companyDataObj.companyName}}</span>
+            <img class="h-8 w-auto" :src="topBarConfigProp.companyDataObj.companyImg" :alt=topBarConfigProp.companyDataObj.companyName />
           </a>
           <button type="button" class="-m-2.5 rounded-md p-2.5" @click="onClickMobileMenuIcon()">
             <span class="sr-only">Close menu</span>
@@ -44,24 +31,10 @@
           </button>
         </div>
         <div class="mt-6 flow-root">
-          <div class="-my-6 divide-y divide-gray-500/10">
-            <div class="space-y-2 py-6">
-              <router-link class="px-2" title="Home" to="/" :class="{'router-link-active': $route.fullPath ==='/'}">
-                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">HOME</span>
+          <div class="-my-6 divide-y divide-gray-500/10"  v-for="optionObj in topBarConfigProp.menuOptionsList">
+              <router-link class="px-2" :title="optionObj.title" :to="optionObj.linkTo" :class="{'router-link-active': $route.fullPath === optionObj.linkTo}">
+                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">{{optionObj.label}}</span>
               </router-link>
-              <router-link class="px-2" title="Our Screens" to="/our-screens" :class="{'router-link-active': $route.fullPath ==='/our-screens'}">
-                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">OUR SCREENS</span>
-              </router-link>
-              <router-link class="px-2" title="Schedule" to="/schedule" :class="{'router-link-active': $route.fullPath ==='/schedule'}">
-                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">SCHEDULE</span>
-              </router-link>
-              <router-link class="px-2" title="Movide Library" to="/movie-library" :class="{'router-link-active': $route.fullPath ==='/movie-library'}">
-                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">MOVIE LIBRARY</span>
-              </router-link>
-              <router-link class="px-2" title="Location & contact" to="/contact" :class="{'router-link-active': $route.fullPath ==='/contact'}">
-                <span class="-mx-3 block rounded-lg px-3 py-2  text-xs lg:text-sm font-normal text-white hover:bg-gray-900">LOCATION & CONTACT</span>
-              </router-link>
-            </div>
           </div>
         </div>
       </div>

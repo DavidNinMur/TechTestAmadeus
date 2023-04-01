@@ -1,16 +1,16 @@
 <template src="./AppTopBar.html"></template>
 
-<script lang="ts">
-
+<script>
 import { ref } from 'vue'
-import { Bars3Icon, XMarkIcon } from '@heroicons/vue/24/outline'
 
 export default {
     
     name: 'AppTopBar',
-    components:{
-        Bars3Icon,
-        XMarkIcon,
+    props:{
+        topBarConfigProp:{
+            type: Object,
+            required: true
+        }
     },
     emits:[],
     setup(){ 
