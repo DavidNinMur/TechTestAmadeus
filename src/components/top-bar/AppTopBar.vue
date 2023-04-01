@@ -13,7 +13,7 @@ export default {
         }
     },
     emits:[],
-    setup(){ 
+    setup(props, { emit }) { 
 
         const mobileMenuOpen = ref(false)
 

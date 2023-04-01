@@ -5,7 +5,7 @@ export default {
     name: 'Home',
     components:{},
     emits:[],
-    setup(){
+    setup(props, { emit }) {
 
     }
 }

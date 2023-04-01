@@ -9,21 +9,24 @@ export default createStore({
       filmsToShow: [],
       favouriteFilms: [
         {
-          imgUrl: 'src/assets/Images/Batman.jpg',
+          id: 'FAV001',
           title: 'Batman Returns',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.',
-          selected: true
+          imgUrl: 'src/assets/Images/Batman.jpg',
+          selected: true,
         },
         {
-          imgUrl: 'src/assets/Images/Wild West.jpg',
+          id: 'FAV002',
           title: 'Wild Wild West',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.',
+          imgUrl: 'src/assets/Images/Wild West.jpg',
           selected: true
         },
         {
-          imgUrl: 'src/assets/Images/Spiderman.jpg',
+          id: 'FAV003',
           title: 'The Amazing Spiderman',
           description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi blanditiis, beatae facere quos corrupti quia veritatis tempora molestias ut asperiores iure omnis voluptatem laborum. Quam soluta qui iste ducimus delectus.',
+          imgUrl: 'src/assets/Images/Spiderman.jpg',
           selected: true
         }
       ],
@@ -36,7 +39,7 @@ export default createStore({
       state.filmsToShow = newFilms;
     },
     setNewFavouriteFilms(state, newFavouriteFilms) {
-      state.filmsToShow = newFavouriteFilms;
+      state.favouriteFilms = newFavouriteFilms;
     },
     setQueryOfUser(state, queryOfUser) {
       state.queryOfUser = queryOfUser;
@@ -47,7 +50,7 @@ export default createStore({
       // data provider to make a call in external api
       const response = await getAllMoviesBySearch({queryStr: query});
       console.log('response ---> ',response)
-      const newFilmsToShow = getParseSearch({responseList: response});
+      const newFilmsToShow = getParseSearch({responseList: response, favouriteFilms: state.favouriteFilms});
       commit("setFilms", newFilmsToShow );
     },
   },

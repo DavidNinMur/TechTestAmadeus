@@ -23,4 +23,12 @@
           }
 
     }
+    .action-div{
+      img{
+        height: 100%;
+      }
+      .cross-to-plus{
+        transform: rotate(45deg);
+      }
+    }
 }

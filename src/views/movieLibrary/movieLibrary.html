@@ -28,7 +28,7 @@
         v-if="dataToRendererRefList"
       >
         <div class="flex justify-center" v-for="dataObj in dataToRendererRefList" :key="dataObj.id">
-          <AppCardInfo :dataToCardInfoProp="dataObj" />
+          <AppCardInfo :dataToCardInfoProp="dataObj" @onClickCardInfo="onClickCardInfo(dataObj)" />
         </div>
       </div>
     </div>

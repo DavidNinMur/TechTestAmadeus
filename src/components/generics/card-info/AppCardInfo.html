@@ -1,5 +1,9 @@
-<div class="container-card-info mt-6">
+<div class="container-card-info relative mt-6">
     <img :src="dataToCardInfoProp.imgUrl" class="card-img-top "  alt="...">
+    <div class="action-div w-10 h-10 m-2 p-3.5 cursor-pointer text-center bg-gray-700 absolute top-0 right-0" @click="onClickCardInfo()">
+        <img v-if="dataToCardInfoProp.selected" src="../../../assets/Icons/Close Grey.svg" alt="">
+        <img v-if="!dataToCardInfoProp.selected" class="cross-to-plus" src="../../../assets/Icons/Close Grey.svg" alt="">
+    </div>
     <div class="div-card-data h-auto m-4">
         <h5 class="mb-1 font-semibold ">{{dataToCardInfoProp.title}}</h5>
         <div class="div-description">

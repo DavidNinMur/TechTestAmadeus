@@ -22,7 +22,7 @@ export default {
         AppCardInfo
     },
     emits:[],
-    setup(){
+    setup(props, { emit }) {
         const store = useStore();
         const videoToShowRefStr = ref('src/assets/Videos/Header Video.mp4')
         const sectionDataRefObj = ref({
@@ -32,13 +32,16 @@ export default {
         const dataToRendererRefList = ref();
 
         onBeforeMount(() => {
+            getData()
+        })
+
+        const getData = () => {
             if(store.state.queryOfUser !== ''){
                 getResultOfSearchedFilms()
             } else {
                 getFavouriteFilms()
             }
-        })
-
+        }
 
         const getResultOfSearchedFilms = () => {
             dataToRendererRefList.value = store.state.filmsToShow;
@@ -62,13 +65,40 @@ export default {
             getFavouriteFilms()
         };
 
+        const onClickCardInfo = (filmSelectedObj) => {
+            const favouriteFilmsByUserList = store.state.favouriteFilms;
+            const searchedFilmsByUserList = store.state.filmsToShow;
+            let indexToDeleteFromFavouriteList = favouriteFilmsByUserList.findIndex((filmObj) => filmObj.id === filmSelectedObj.id );
+            let indexToUpdateFromSearchedList = searchedFilmsByUserList.findIndex((filmObj) => filmObj.title === filmSelectedObj.title );
+
+             if(filmSelectedObj.selected){
+                favouriteFilmsByUserList.splice(indexToDeleteFromFavouriteList, 1)
+                if(indexToUpdateFromSearchedList > -1){
+                    searchedFilmsByUserList[indexToUpdateFromSearchedList].selected = false;
+                }
+            } else {
+                if(indexToDeleteFromFavouriteList === -1){
+                    favouriteFilmsByUserList.push(filmSelectedObj);
+                }
+                if(indexToUpdateFromSearchedList > -1){
+                    searchedFilmsByUserList[indexToUpdateFromSearchedList].selected = true;
+                }
+            }
+
+            store.commit("setNewFavouriteFilms", favouriteFilmsByUserList);
+            store.commit("setFilms", searchedFilmsByUserList);
+
+            getData();
+        }
+
         return {
             videoToShowRefStr,
             sectionDataRefObj,
             dataToRendererRefList,
 
             onQueryChange,
-            onCleaningSearch
+            onCleaningSearch,
+            onClickCardInfo
         }
     }
 }

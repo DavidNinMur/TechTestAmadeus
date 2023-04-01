@@ -23,7 +23,7 @@ export default {
     AppTopBar,
     AppFooter
   }, 
-  setup(){
+  setup(props, { emit }) {
 
     const topBarConfigRefObj = ref({});
 

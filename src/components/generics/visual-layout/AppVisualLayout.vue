@@ -10,7 +10,7 @@ export default {
         }
     },
     emits:[],
-    setup(){ 
+    setup(props, { emit }) { 
 
         
         return{}

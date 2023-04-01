@@ -9,9 +9,17 @@ export default {
             required: true
         }
     },
-    emits:[],
-    setup(){
+    emits:['onClickCardInfo'],
+    setup(props, { emit }) {
 
+
+        const onClickCardInfo = () => {
+            emit('onClickCardInfo')
+        }
+
+        return {
+            onClickCardInfo
+        }
     }
 }
 </script>
